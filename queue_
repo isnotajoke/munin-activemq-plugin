@@ -146,7 +146,7 @@ sub get_vars{
 			## it depends on you choice (Environment configuration)
 			if ($_ eq 'dequeueCount'){
 				push( @ret, { dequeueCount => {
-							label => "Message acked succefully",
+							label => "Message acked successfully",
 							type => "GAUGE",
 							draw => "LINE2",
 							info => "The number of messages that have been successfully (i.e., they have been acknowledged from the consumer) read off the queue over the lifetime of the queue."
@@ -170,7 +170,7 @@ sub get_vars{
 			}
 			elsif ( $_ eq 'consumerCount' ){
 				push( @ret, { consumerCount => {
-							label =>"Number of consomers",
+							label =>"Number of consumers",
 							type => "GAUGE",
 							draw => "LINE2",
 							info => "The number of active consumers on the destination when the advisory message was sent."
