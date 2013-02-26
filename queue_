@@ -30,7 +30,7 @@ You can also rename the "category" by the following:
 # [queue_my.message.queue]
 # 	env.host	127.0.0.1
 #	env.port	8161
-#	env.type	('size', 'enqueueCount', 'dequeueCount', 'consumerCount')
+#	env.type	size enqueueCount dequeueCount consumerCount
 #	env.category my_pretty_name
 
 
