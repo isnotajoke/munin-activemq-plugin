@@ -149,7 +149,7 @@ sub get_vars{
 							label => "Message acked succefully",
 							type => "GAUGE",
 							draw => "LINE2",
-							infra => "The number of messages that have been successfully (i.e., they have been acknowledged from the consumer) read off the queue over the lifetime of the queue."
+							info => "The number of messages that have been successfully (i.e., they have been acknowledged from the consumer) read off the queue over the lifetime of the queue."
 						}});
 			}
 			elsif ( $_ eq 'enqueueCount' ){
