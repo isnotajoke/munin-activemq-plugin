@@ -229,7 +229,7 @@ sub check_config{
 		foreach (@vars_array){
 			foreach my $key ( keys %{$_} ){
 				if( $key eq 'master' ){
-					 foreach my $item (keys $_->{$key} ){
+					 foreach my $item (keys %{$_->{$key}} ){
 						print "$item $_->{$key}->{$item} \n";
 					 }
 				}
@@ -242,7 +242,7 @@ sub check_config{
 				#     graph_args --base 1000
 				else{
 					$graph_order .= "$key ";
-					foreach my $item (keys $_->{$key}){
+					foreach my $item (keys %{$_->{$key}}){
 						 $buf .= "$key.$item $_->{$key}->{$item}\n";
 					}
 				}
@@ -265,8 +265,8 @@ sub get_values{
 	my ($uri,$queue_name, @vars_array) = @_;
 	my $tree = fetch( $uri );
 	
-	foreach my $hash (values @vars_array){
-		foreach my $key ( keys $hash ){
+	foreach my $hash (@vars_array){
+		foreach my $key ( keys %{$hash} ){
 			if ( $key ne 'master' ){
 				my $value = $tree->{queues}->{queue}->{$queue_name}->{stats}->{$key};
 				if( $value eq "" ){ $value = 'U';}
